@@ -667,7 +667,7 @@ type NewDocAction struct {
 	DocInfo
 }
 
-// Returns a new instance of *NewDocAction as a Sophier
+// NewNewDocAction returns a new instance of *NewDocAction as a Sophier
 func NewNewDocAction() sophie.Sophier {
 	return new(NewDocAction)
 }

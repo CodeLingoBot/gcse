@@ -47,7 +47,7 @@ func RepoInfoAge(r *gpb.RepoInfo) time.Duration {
 	return time.Now().Sub(t)
 }
 
-// Returns all the sites one by one by calling the provided func.
+// ForEachPackageSite returns all the sites one by one by calling the provided func.
 func ForEachPackageSite(f func(string) error) error {
 	return box.View(func(tx bh.Tx) error {
 		return tx.ForEach([][]byte{pkgsRoot}, func(_ bh.Bucket, k, v bytesp.Slice) error {
@@ -77,7 +77,7 @@ func ForEachPackageOfSite(site string, f func(string, *gpb.PackageInfo) error) e
 	})
 }
 
-// Returns an empty (non-nil) PackageInfo if not found.
+// ReadPackage returns an empty (non-nil) PackageInfo if not found.
 func ReadPackage(site, path string) (*gpb.PackageInfo, error) {
 	info := &gpb.PackageInfo{}
 	if err := box.View(func(tx bh.Tx) error {

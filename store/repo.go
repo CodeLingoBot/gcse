@@ -12,7 +12,7 @@ import (
 	gpb "github.com/daviddengcn/gcse/shared/proto"
 )
 
-// Returns an empty (non-nil) PackageInfo if not found.
+// ReadRepository returns an empty (non-nil) PackageInfo if not found.
 func ReadRepository(site, user, repo string) (*gpb.Repository, error) {
 	doc := &gpb.Repository{}
 	if err := box.View(func(tx bh.Tx) error {

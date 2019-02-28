@@ -33,7 +33,7 @@ type DocInfo struct {
 	Exported    []string // exported tokens(funcs/types)
 }
 
-// Returns a new instance of DocInfo as a sophie.Sophier
+// NewDocInfo returns a new instance of DocInfo as a sophie.Sophier
 func NewDocInfo() sophie.Sophier {
 	return new(DocInfo)
 }

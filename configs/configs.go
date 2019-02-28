@@ -150,7 +150,7 @@ func SetTestingDataPath() {
 	log.Printf("DataRoot: %v", DataRoot)
 }
 
-// Returns the segments imported from web site.
+// ImportSegments returns the segments imported from web site.
 func ImportSegments() utils.Segments {
 	return utils.Segments(ImportPath)
 }
